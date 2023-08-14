@@ -1,4 +1,4 @@
-# Hai :raised_hand: Saya YOHANES OKTANIO
+
 ## 💫 About Me:
 Developer yang berkontribusi dalam pengembangan dan pembuatan khususnya web dan juga aplikasi desktop yang sesuai kebutuhan
 
