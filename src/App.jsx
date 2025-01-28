@@ -10,7 +10,7 @@ const App = () => {
       <h1 className='font-bold text-3xl'>Hello I'm <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent'>YOHANES</span></h1>
 
       <div className="mt-5 flex flex-col gap-3">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusantium consequuntur minima quasi! Praesentium eos modi dolore eius suscipit ipsa!</p>
+        <p>Saya <span className="font-bold">Yohanes Oktanio</span> seorang mahasiswa Teknik Informatika di Universitas Trunojoyo Madura yang berusia 19 tahun. Saat ini, saya sedang mendalami bidang backend development dengan fokus pada pengelolaan database, pengembangan API, serta integrasi sistem. Saya memiliki ketertarikan terhadap teknologi open-source dan senang mengelola server dengan Nginx untuk kebutuhan proyek saya.</p>
       </div>
 
       <div className="py-10 flex flex-col">
@@ -80,7 +80,7 @@ const App = () => {
       <div className="py-16">
         <h3 className='font-semibold sm:text-xl text-xl relative font-poppins'>Projects</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusantium consequuntur minima quasi! Praesentium eos modi dolore eius suscipit ipsa!</p>
+          <p>Berisi kumpulan proyek yang telah saya kerjakan, mencakup pengembangan aplikasi, pengelolaan database, dan integrasi sistem sesuai kemampuan saya dalam backend development dan teknologi yang saya kuasai.</p>
         </div>
 
         <div className="flex flex-wrap my-20 gap-16">

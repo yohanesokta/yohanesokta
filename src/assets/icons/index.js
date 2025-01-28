@@ -26,8 +26,11 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
-
+import ejc from "./ejc.svg"
+import hanzsoft from "./hanzsoft.png"
 export {
+    hanzsoft,
+    ejc,
     css,
     express,
     git,

@@ -23,7 +23,9 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    ejc,
+    typescript,
+    hanzsoft
 } from "../assets/icons";
 
 export const skills = [
@@ -184,45 +186,45 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
         iconUrl: threads,
         theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'G - Connect',
+        description: 'Sebuah aplikasi chat sederhana yang memanfaatkan fitur google meet untuk melakukan project meet bersama untuk lingkup pribadi',
+        link: 'https://github.com/yohanesokta/G-connect',
     },
     {
         iconUrl: snapgram,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'Reels Instagram Downloader',
+        description: 'Develop website untuk mendownload segala jenis video reels di platfrom instagram',
+        link: 'https://github.com/yohanesokta/IG-downloader',
     },
     {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        iconUrl: ejc,
+        theme: 'btn-back-white',
+        name: 'East Java Culture',
+        description: "East Java Culture adalah jendela digital ke pesona budaya Jawa Timur. ditujukan untuk kompetisi TECHCOMPFEST 2024",
+        link: 'https://github.com/yohanesokta/EastJava-Culture',
     },
     {
         iconUrl: summiz,
         theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+        name: 'Mirror - SC',
+        description: 'Screen Mirroring Aplikasi Dengan USB, bisa digunakan untuk streaming dan mirror device',
+        link: 'https://github.com/yohanesokta/Mirror-SC',
+    },
+    {
+        iconUrl : pricewise,
+        theme : "btn-back-blue",
+        name : "FORM MABA UTM 2024",
+        description :"Website digunakan saat massa 'BOOTING AND MEMORY 2024' UNIVERSITAS TRUNOJOYO MADURA",
+        link : "https://github.com/yohanesokta/pendataan-maba-dev"
+    },
+    {
+        iconUrl: hanzsoft,
+        theme :"btn-back-white",
+        name : "Hanzsoft ( Dead 💀 )",
+        description : "Adalah website pertama yang saya publish 2022 , ini di gunakan untuk membantu teman teman mendownload software free",
+        link:"https://github.com/yohanesokta/hanzsoft-websites"
     }
 ];
