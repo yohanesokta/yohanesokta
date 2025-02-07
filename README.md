@@ -24,5 +24,8 @@ Code it, test it, break it, fix it, repeat.
 Lets Play Snake 😄
 
 <p align="center">
-<img src="https://github.com/VishwaGauravIn/VishwaGauravIn/blob/output/github-contribution-grid-snake.svg">
+  <picture>
+  <source srcset="https://raw.githubusercontent.com/yohanesokta/yohanesokta/refs/heads/output/github-snake-dark.svg" media="(prefers-color-scheme: dark)">
+  <img src="https://raw.githubusercontent.com/yohanesokta/yohanesokta/refs/heads/output/github-snake.svg" alt="Logo">
+</picture>
 </p>
