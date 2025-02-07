@@ -1,4 +1,3 @@
----
 
 <h2 align="left">Hi 👋! My name is Yohanes Oktanio and I'm a Student, from Universitas Trunojoyo Madura</h2>
 
