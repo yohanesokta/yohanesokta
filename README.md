@@ -10,7 +10,7 @@
 
 ###
 
-<img align="right" height="180" width="180" src="https://media1.tenor.com/m/ZDQpiaHakBEAAAAd/pedro-vienna.gif"  />
+<img align="right" height="150" width="150" src="https://media1.tenor.com/m/ZDQpiaHakBEAAAAd/pedro-vienna.gif"  />
 
 ###
 
