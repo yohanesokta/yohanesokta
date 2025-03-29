@@ -1,5 +1,9 @@
+<h1 align="center">Hi 👋! My name is Yohanes Oktanio</h1>
+<p align="center">I'm a Student, from Universitas Trunojoyo Madura</p>
 
-<h2 align="left">Hi 👋! My name is Yohanes Oktanio and I'm a Student, from Universitas Trunojoyo Madura</h2>
+> I'm highly interested in becoming a Backend Developer and DevOps Engineer, diving deep into the world of programming and system optimization.
+
+---
 
 ###
 
