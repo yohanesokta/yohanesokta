@@ -45,12 +45,3 @@
 
 ![YohanesOktanio github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=yohanesokta&bg_color=141414&theme=vue)
 
----
-Lets Play Snake 😄
-
-<p align="center">
-  <picture>
-  <source srcset="https://raw.githubusercontent.com/yohanesokta/yohanesokta/refs/heads/output/github-snake-dark.svg" media="(prefers-color-scheme: dark)">
-  <img src="https://raw.githubusercontent.com/yohanesokta/yohanesokta/refs/heads/output/github-snake.svg" alt="Logo">
-</picture>
-</p>
