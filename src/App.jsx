@@ -1,125 +1,107 @@
-import React from 'react'
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
-import "react-vertical-timeline-component/style.min.css"
-import { skills, experiences, projects } from './constants'
-import { arrow } from './assets/icons'
+import { useEffect, useRef,useState } from "react";
+import Lanyard from "./Components/Lanyard/Lanyard.jsx";
+import SPlitText from "./TextAnimations/SplitText/SplitText.jsx";
+import RunningText from "./Components/Running/Running.jsx";
 
-const App = () => {
+export function App() {
+  const navigationContainer = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigationAnimated = () => {
+    const scrollY = window.scrollY;
+    if (navigationContainer.current) {
+      let percen = Math.min(1, scrollY / 400);
+      navigationContainer.current.style.background = `rgba(38, 38, 38, ${percen})`;
+      navigationContainer.current.style.width = `${100 - percen * 100}%`;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", navigationAnimated);
+    return () => {
+      window.removeEventListener("scroll", navigationAnimated);
+    };
+  }, []);
+
   return (
-    <section className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)]'>
-      <h1 className='font-bold text-3xl'>Hello I'm <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent'>YOHANES</span></h1>
-
-      <div className="mt-5 flex flex-col gap-3">
-        <p>Saya <span className="font-bold">Yohanes Oktanio</span> seorang mahasiswa Teknik Informatika di Universitas Trunojoyo Madura yang berusia 19 tahun. Saat ini, saya sedang mendalami bidang backend development dengan fokus pada pengelolaan database, pengembangan API, serta integrasi sistem. Saya memiliki ketertarikan terhadap teknologi open-source dan senang mengelola server dengan Nginx untuk kebutuhan proyek saya.</p>
-      </div>
-
-      <div className="py-10 flex flex-col">
-        <h3 className='font-semibold sm:text-xl text-xl relative font-poppins'>My Skills</h3>
-      </div>
-      <div className="mt-16 flex flex-wrap gap-12">
-        {skills.map((skill) => (
-          <div className="block-container w-20 h-20">
-            <div className='btn-back rounded-xl'>
-              <div className="btn-front rounded-xl flex justify-center items-center">
-                <img src={skill.imageUrl} alt={skill.name} className='w-1/2 h-1/2 object-contain' />
-              </div>
+    <div className="">
+      <nav className="w-full flex justify-center items-center py-4 fixed z-50">
+        <div
+          ref={navigationContainer}
+          className="w-11/12 md:w-auto py-3 px-6 md:px-8 flex justify-center rounded-full transition-all duration-300"
+        >
+          <div className="flex items-center justify-between">
+            <div className="hidden md:flex gap-10 lg:gap-20 text-md font-semibold text-white">
+              <a href="#about" className="hover:text-green-300 transition-colors">About</a>
+              <a href="#experience" className="hover:text-green-300 transition-colors">Experience</a>
+              <a href="#projects" className="hover:text-green-300 transition-colors">Projects</a>
+              <a href="#contact" className="hover:text-green-300 transition-colors">Contact</a>
+            </div>
+            <div className="md:hidden">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+              </button>
             </div>
           </div>
-        ))}
-      </div>
+          {isMenuOpen && (
+            <div className="md:hidden mt-4">
+              <ul className="flex flex-col items-center gap-4 text-md font-semibold text-white">
+                <li><a href="#about" onClick={() => setIsMenuOpen(false)} className="block py-2">About</a></li>
+                <li><a href="#experience" onClick={() => setIsMenuOpen(false)} className="block py-2">Experience</a></li>
+                <li><a href="#projects" onClick={() => setIsMenuOpen(false)} className="block py-2">Projects</a></li>
+                <li><a href="#contact" onClick={() => setIsMenuOpen(false)} className="block py-2">Contact</a></li>
+              </ul>
+            </div>
+          )}
+        </div>
+      </nav>
 
-
-      <div className="py-16">
-        <h3 className='font-semibold sm:text-xl text-xl relative font-poppins'>Work Experience</h3>
-        <div className="mt-5 flex flex-col gap-3 text-slate-500">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusantium consequuntur minima quasi! Praesentium eos modi dolore eius suscipit ipsa!</p>
-
-          <div className="mt-12 flex">
-            <VerticalTimeline>
-              {experiences.map((experiences) => (
-                <VerticalTimelineElement
-                  date={experiences.date}
-                  icon={<div className="flex justify-center items-center w-full h-full">
-                    <img
-                      src={experiences.icon}
-                      alt={experiences.company_name} className='w-[60%] h-[60%] object-contain'
-                    />
-                  </div>}
-                  iconStyle={{ background: experiences.iconBg }}
-                  contentStyle={{
-                    borderBottom: "8px",
-                    borderStyle: "solid",
-                    borderBottomColor: experiences.iconBg,
-                    boxShadow: "none"
-                  }}
-                >
-                  <div className="">
-                    <h3 className='text-black text-xl font-semibold'>
-                      {experiences.title}
-                    </h3>
-                    <p className='text-black-500 font-medium font-base' style={{ margin: 0 }}>
-                      {experiences.company_name}
-                    </p>
-                  </div>
-                  <ul className='my-5 list-disc ml-5 space-y-2'>
-                    {experiences.points.map((point, index) => (
-                      <li key={`experience-point-${index}`} className='text-black-500/50 font-normal pl-1 text-sm'>
-                        {point}
-                      </li>
-                    ))}
-
-                  </ul>
-                </VerticalTimelineElement>
-              ))}
-            </VerticalTimeline>
+      <main className="">
+        <div className="w-full flex flex-col md:flex-row min-h-screen">
+          <div className="w-full md:w-1/2 lg:w-2/5 h-[50vh] md:h-auto flex items-center justify-center">
+            <Lanyard gravity={[0, -40, 0]} fov={10}></Lanyard>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-20 py-10 md:py-20">
+            <div className="flex gap-4 w-max items-center px-4 py-2 bg-gray-800 text-white rounded-lg shadow-lg mb-6">
+              <div className="w-2.5 h-2.5 bg-green-300 rounded-full"></div>
+              <p className="text-sm sm:text-base">Hallo Semua</p>
+            </div>
+            <SPlitText
+              text="Fullstack Developer"
+              className="text-gray-300 text-4xl sm:text-5xl lg:text-6xl font-black"
+            />
+            <p className="py-8 text-gray-300 text-base sm:text-lg lg:text-xl">
+              Saya <span className="text-green-300">Yohanes Oktanio</span> seorang mahasiswa Teknik Informatika di Universitas Trunojoyo Madura yang berusia 19 tahun. Saat ini, saya sedang mendalami bidang backend development dengan fokus pada pengelolaan database, pengembangan API, serta integrasi sistem. Saya memiliki ketertarikan terhadap teknologi open-source dan senang mengelola server dengan Nginx untuk kebutuhan proyek saya.
+            </p>
+            <div>
+              <h1 className="font-bold text-white text-xl sm:text-2xl flex items-center">
+                Social
+                <i className="mx-2 text-sm fa-solid fa-arrows-turn-right rotate-90"></i>
+              </h1>
+              <ul className="flex flex-wrap gap-4 sm:gap-6 text-gray-300 text-base sm:text-lg my-4">
+                <li className="flex gap-2 items-center hover:text-green-300 transition-colors">
+                  <i className="fa-brands fa-github"></i>
+                  <a href="https://github.com/yohanesokta" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </li>
+                <li className="flex gap-2 items-center hover:text-green-300 transition-colors">
+                  <i className="fa-brands fa-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/yohanesokta/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </li>
+                <li className="flex gap-2 items-center hover:text-green-300 transition-colors">
+                  <i className="fa-brands fa-instagram"></i>
+                  <a href="https://www.instagram.com/yohanesoktanio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-
-      <div className="py-16">
-        <h3 className='font-semibold sm:text-xl text-xl relative font-poppins'>Projects</h3>
-        <div className="mt-5 flex flex-col gap-3 text-slate-500">
-          <p>Berisi kumpulan proyek yang telah saya kerjakan, mencakup pengembangan aplikasi, pengelolaan database, dan integrasi sistem sesuai kemampuan saya dalam backend development dan teknologi yang saya kuasai.</p>
+        <div className="z-20 w-full overflow-x-hidden py-10">
+          <RunningText />
         </div>
-
-        <div className="flex flex-wrap my-20 gap-16">
-          {projects.map((project) => (
-            <div className="lg:w-[400px] w-full" key={project.name}>
-              <div className="block-container w-12 h-12">
-                <div className={`btn-back rounded-xl ${project.theme}`}>
-                  <div className="btn-front rounded-xl flex justify-center items-center">
-                    <img src={project.iconUrl} alt="Project Icon"
-                      className='w-1/2 h-1/2 object-contain'
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-5 flex flex-col">
-                  <h4 className='text-2xl font-semibold'>
-                    {project.name}
-                  </h4>
-                  <p className='mt-2 text-slate-500'>
-                    {project.description}
-                  </p>
-                  <div className="mt-5 items-center gap-2">
-                    <a href={project.link}
-                      target='_blank'
-                      className='font-semibold text-blue-600'
-                    >Live Link</a>
-                    <img 
-                      src={arrow}
-                      alt='arrow'
-                      className='w-4 h-4 object-contain'
-                    />
-                  </div>
-                </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+      </main>
+    </div>
+  );
 }
-
-export default App
