@@ -1,7 +1,11 @@
-import { useEffect, useRef,useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lanyard from "./Components/Lanyard/Lanyard.jsx";
 import SPlitText from "./TextAnimations/SplitText/SplitText.jsx";
 import RunningText from "./Components/Running/Running.jsx";
+import SplashCursor from "./Animations/SplashCursor/SplashCursor.jsx";
+import SpotlightCard from "./Components/SpotlightCard/SpotlightCard.jsx";
+import Projects from "./Project/Projects.jsx";
+import Contact from "./Project/Contact.jsx";
 
 export function App() {
   const navigationContainer = useRef(null);
@@ -28,7 +32,7 @@ export function App() {
       <nav className="w-full flex justify-center items-center py-4 fixed z-50">
         <div
           ref={navigationContainer}
-          className="w-11/12 md:w-auto py-3 px-6 md:px-8 flex justify-center rounded-full transition-all duration-300"
+          className="w-11/12 md:w-auto py-3 px-6 md:px-8 flex justify-center rounded-xl md:rounded-full min-w-max"
         >
           <div className="flex items-center justify-between">
             <div className="hidden md:flex gap-10 lg:gap-20 text-md font-semibold text-white">
@@ -102,6 +106,58 @@ export function App() {
           <RunningText />
         </div>
       </main>
+
+
+
+      <div className="px-3 md:px-10 lg:px-20 bg-neutral-900 relative">
+        <div className="absolute bottom-0 h-100 w-full cat-grad left-0"></div>
+        <div className="flex w-full justify-center"><i class="fa-solid fa-grip-lines px-10 py-2 my-[-10px] bg-white rounded-sm"></i></div>
+        <h1 className="font-bold text-4xl  text-center mx-0 md:text-left md:mx-10 text-white py-10">Experience</h1>
+        {/* start loop */}
+        <div className="flex flex-col gap-10">
+          <div className="flex w-full gap-4 flex-wrap justify-between">
+            <SpotlightCard className="md:w-[48%] w-full border-4" spotlightColor="rgba(128, 0, 128, 0.5)">
+              <h2 className="text-xl  font-semibold text-white mb-4">Apple Developer Foundation BATCH 1</h2>
+              <p className="text-gray-300 mb-2">Apple developer academy</p>
+              <p className="text-gray-400 text-sm">April 2025 - Mei 2025</p>
+              <ul className="list-disc list-inside text-gray-300 mt-4">
+                <li>Belajar Mobile Developer Ecosystem</li>
+                <li>Belajar Swift UI</li>
+                <li>Belajar mengelola team dengan methode terbaru</li>
+              </ul>
+            </SpotlightCard>
+
+            <SpotlightCard className="md:w-[48%] w-full border-4" spotlightColor="rgba(128, 0, 128, 0.5)">
+              <h2 className="text-xl  font-semibold text-white mb-4">Ketua Cabang & KOKI</h2>
+              <p className="text-gray-300 mb-2">Ajib Fried Chicken Jombang</p>
+              <p className="text-gray-400 text-sm">Maret 2024 - Juli 2024</p>
+              <ul className="list-disc list-inside text-gray-300 mt-4">
+                <li>Manajemen keuangan & anggota kariyawan cabang dapur kejambon</li>
+                <li>Manajemen Penjualan</li>
+                <li>Iklan di social media dan google maps location</li>
+              </ul>
+            </SpotlightCard>
+
+            <SpotlightCard className="md:w-[48%] w-full border-4" spotlightColor="rgba(128, 0, 128, 0.5)">
+              <h2 className="text-xl  font-semibold text-white mb-4">Digital Marketing | Content Manager</h2>
+              <p className="text-gray-300 mb-2">Resto Joss Gandos</p>
+              <p className="text-gray-400 text-sm">January 2023 - Mei 2023</p>
+              <ul className="list-disc list-inside text-gray-300 mt-4">
+                <li>Pembuatan Kontent Rutin Tiap Hari</li>
+                <li>Event Documentation Wedding</li>
+                <li>Record & Dokumentasi Ulang Tahun</li>
+                <li>Pembuatan Konten Iklan</li>
+              </ul>
+            </SpotlightCard>
+          </div>
+        </div>
+        <Projects />
+        <div className="pb-50"></div>
+      </div>
+        <Contact/>
+
     </div>
+
+
   );
 }

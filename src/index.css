@@ -19,3 +19,12 @@ canvas{
     }
         
 }
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.cat-grad{
+    background: #171717;
+background: linear-gradient(180deg, rgba(23, 23, 23, 1) 0%, rgba(16, 16, 16, 1) 100%);
+}
