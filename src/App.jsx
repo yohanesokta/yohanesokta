@@ -7,6 +7,8 @@ import SpotlightCard from "./Components/SpotlightCard/SpotlightCard.jsx";
 import Projects from "./Project/Projects.jsx";
 import Contact from "./Project/Contact.jsx";
 
+import experience from "./static/experience.json";
+
 export function App() {
   const navigationContainer = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,13 +64,13 @@ export function App() {
         </div>
       </nav>
 
-      <main className="">
+      <main className="" id="about">
         <div className="w-full flex flex-col md:flex-row min-h-screen">
           <div className="w-full md:w-1/2 lg:w-2/5 h-[50vh] md:h-auto flex items-center justify-center">
             <Lanyard gravity={[0, -40, 0]} fov={10}></Lanyard>
           </div>
           <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-20 py-10 md:py-20">
-            <div className="flex gap-4 w-max items-center px-4 py-2 bg-gray-800 text-white rounded-lg shadow-lg mb-6">
+            <div  className="flex gap-4 w-max items-center px-4 py-2 bg-gray-800 text-white rounded-lg shadow-lg mb-6">
               <div className="w-2.5 h-2.5 bg-green-300 rounded-full"></div>
               <p className="text-sm sm:text-base">Hallo Semua</p>
             </div>
@@ -87,6 +89,7 @@ export function App() {
               <ul className="flex flex-wrap gap-4 sm:gap-6 text-gray-300 text-base sm:text-lg my-4">
                 <li className="flex gap-2 items-center hover:text-green-300 transition-colors">
                   <i className="fa-brands fa-github"></i>
+
                   <a href="https://github.com/yohanesokta" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </li>
                 <li className="flex gap-2 items-center hover:text-green-300 transition-colors">
@@ -109,52 +112,32 @@ export function App() {
 
 
 
-      <div className="px-3 md:px-10 lg:px-20 bg-neutral-900 relative">
+      <div className="px-3 md:px-10 lg:px-20 bg-neutral-900 relative" id="experience">
         <div className="absolute bottom-0 h-100 w-full cat-grad left-0"></div>
-        <div className="flex w-full justify-center"><i class="fa-solid fa-grip-lines px-10 py-2 my-[-10px] bg-white rounded-sm"></i></div>
-        <h1 className="font-bold text-4xl  text-center mx-0 md:text-left md:mx-10 text-white py-10">Experience</h1>
+        <h1 className="font-bold text-4xl text-center mx-0 md:mx-10 text-white py-15 pb-20">Experience</h1>
         {/* start loop */}
         <div className="flex flex-col gap-10">
           <div className="flex w-full gap-4 flex-wrap justify-between">
-            <SpotlightCard className="md:w-[48%] w-full border-4" spotlightColor="rgba(128, 0, 128, 0.5)">
-              <h2 className="text-xl  font-semibold text-white mb-4">Apple Developer Foundation BATCH 1</h2>
-              <p className="text-gray-300 mb-2">Apple developer academy</p>
-              <p className="text-gray-400 text-sm">April 2025 - Mei 2025</p>
-              <ul className="list-disc list-inside text-gray-300 mt-4">
-                <li>Belajar Mobile Developer Ecosystem</li>
-                <li>Belajar Swift UI</li>
-                <li>Belajar mengelola team dengan methode terbaru</li>
-              </ul>
-            </SpotlightCard>
-
-            <SpotlightCard className="md:w-[48%] w-full border-4" spotlightColor="rgba(128, 0, 128, 0.5)">
-              <h2 className="text-xl  font-semibold text-white mb-4">Ketua Cabang & KOKI</h2>
-              <p className="text-gray-300 mb-2">Ajib Fried Chicken Jombang</p>
-              <p className="text-gray-400 text-sm">Maret 2024 - Juli 2024</p>
-              <ul className="list-disc list-inside text-gray-300 mt-4">
-                <li>Manajemen keuangan & anggota kariyawan cabang dapur kejambon</li>
-                <li>Manajemen Penjualan</li>
-                <li>Iklan di social media dan google maps location</li>
-              </ul>
-            </SpotlightCard>
-
-            <SpotlightCard className="md:w-[48%] w-full border-4" spotlightColor="rgba(128, 0, 128, 0.5)">
-              <h2 className="text-xl  font-semibold text-white mb-4">Digital Marketing | Content Manager</h2>
-              <p className="text-gray-300 mb-2">Resto Joss Gandos</p>
-              <p className="text-gray-400 text-sm">January 2023 - Mei 2023</p>
-              <ul className="list-disc list-inside text-gray-300 mt-4">
-                <li>Pembuatan Kontent Rutin Tiap Hari</li>
-                <li>Event Documentation Wedding</li>
-                <li>Record & Dokumentasi Ulang Tahun</li>
-                <li>Pembuatan Konten Iklan</li>
-              </ul>
-            </SpotlightCard>
+            {experience.map(data =>
+              <SpotlightCard className="w-full max-w-lg"
+                borderColors={["#f472b6", "#06b6d4", "#a78bfa"]}
+                spotlightColor="rgba(244, 114, 182, 0.5)">
+                <h2 className="text-xl  font-semibold text-white mb-4">{data.name}</h2>
+                <p className="text-gray-300 mb-2">{data.title}</p>
+                <p className="text-gray-400 text-sm">{data.date}</p>
+                <ul className="list-disc list-inside text-gray-300 mt-4">
+                  {data.jobs.map(job =>
+                    <li>{job}</li>
+                  )}
+                </ul>
+              </SpotlightCard>
+            )}
           </div>
         </div>
-        <Projects />
+        <Projects/>
         <div className="pb-50"></div>
       </div>
-        <Contact/>
+      <Contact />
 
     </div>
 

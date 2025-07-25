@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Apple Developer Foundation BATCH 1",
+    "title": "Apple developer academy",
+    "date": "April 2025 - Mei 2025",
+    "jobs": [
+      "Belajar Mobile Developer Ecosystem",
+      "Belajar Swift UI",
+      "Belajar mengelola team dengan methode terbaru"
+    ]
+  },
+  {
+    "name": "Ketua Cabang & Juru Masak",
+    "title": "Ajib Fried Chicken Jombang",
+    "date": "Maret 2024 - Juli 2024",
+    "jobs": [
+      "Manajemen keuangan & anggota kariyawan cabang dapur kejambon",
+      "Manajemen Penjualan",
+      "Iklan di social media dan google maps location"
+    ]
+  },
+  {
+    "name": "Digital Marketing | Content Manager",
+    "title": "Resto Joss Gandos",
+    "date": "January 2023 - Mei 2023",
+    "jobs": [
+      "Pembuatan Kontent Rutin Tiap Hari",
+      "Event Documentation Wedding",
+      "Record & Dokumentasi Ulang Tahun",
+      "Pembuatan Konten Iklan"
+    ]
+  },
+  {
+    "name": "UPTPTKK | Web Design",
+    "title": "UPTPTKK Ketintaang Surabaya",
+    "date": "November 2022",
+    "jobs": [
+      "Pembuatan Desain Website",
+      "Figma Desain dengan proyek sungguhan",
+      "Menyelesaikan kegiatan dalam kurun waktu 1 minggu"
+    ]
+  }
+]

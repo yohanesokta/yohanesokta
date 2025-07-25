@@ -7,8 +7,7 @@ const ProjectCard = ({ image, title, description, stack, link }) => {
     if (!cardRef.current) return;
     const { clientX, clientY, currentTarget } = e;
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    // Calculate rotation values based on cursor position
-    const x = (clientX - left - width / 2) / 20; // divisor controls sensitivity
+    const x = (clientX - left - width / 2) / 20;
     const y = (clientY - top - height / 2) / 20;
     cardRef.current.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
   };
@@ -21,7 +20,7 @@ const ProjectCard = ({ image, title, description, stack, link }) => {
   return (
     <div
       className="relative w-full max-w-lg mx-auto transition-all duration-10 group"
-      style={{ perspective: '900px' }} // perspective moved here
+      style={{ perspective: '900px' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -34,15 +33,10 @@ const ProjectCard = ({ image, title, description, stack, link }) => {
           backgroundPosition: 'center',
         }}
       >
-        {/* -- PERBAIKAN UTAMA ADA DI SINI --
-          Kita gabungkan overlay dan konten menjadi satu.
-          Menggunakan gradient dari bawah ke atas (gelap ke transparan).
-        */}
         <div 
           className="absolute inset-0 flex flex-col justify-end p-6 text-white transition-all duration-300 ease-in-out  
                      bg-gradient-to-t from-black/90 via-black/60 to-transparent"
         >
-          {/* Konten Kartu (Teks, Icon, Tombol) */}
           <div className="preserve-3d">
             <h3
               className="text-3xl font-bold transition-transform duration-500 ease-out transform group-hover:-translate-y-2"

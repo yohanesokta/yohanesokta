@@ -3,6 +3,9 @@
 body {
     background-color: #101010;
 }
+*{
+    scroll-behavior: smooth !important;
+}
 canvas{
     z-index: -1;
 }
@@ -28,3 +31,6 @@ canvas{
     background: #171717;
 background: linear-gradient(180deg, rgba(23, 23, 23, 1) 0%, rgba(16, 16, 16, 1) 100%);
 }
+
+
+/* End */
