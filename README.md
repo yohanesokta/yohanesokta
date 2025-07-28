@@ -24,18 +24,22 @@ I'm Yohanes Oktanio — a curious mind who loves breaking and building systems �
 
 ---
 
-### 📊 GitHub Stats
-
-<div align="center">
-  <br/><br/>
-  <img src="https://github-readme-stats.vercel.app/api?username=yohanesokta&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight&hide_title=true&hide_border=true&card_width=400" height="165"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=yohanesokta&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" height="165"/>
-  <br/><br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yohanesokta&layout=compact&langs_count=6&theme=tokyonight&hide_border=true&card_width=450" />
-
-  <br/><br/>
-
+### 📊 GitHub Stats<div align="center">
+  <table>
+    <tr>
+      <td>
+        <img src="https://github-readme-stats.vercel.app/api?username=yohanesokta&show_icons=true&count_private=true&include_all_commits=true&theme=github_dark&hide_border=true&bg_color=00000000" height="165" />
+      </td>
+      <td>
+        <img src="https://github-readme-streak-stats.herokuapp.com?user=yohanesokta&theme=github-dark&hide_border=true&background=00000000" height="165" />
+      </td>
+      <td>
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yohanesokta&layout=compact&langs_count=6&theme=github_dark&hide_border=true&bg_color=00000000" height="165" />
+      </td>
+    </tr>
+  </table>
 </div>
+
 
 ---
 
@@ -43,5 +47,5 @@ I'm Yohanes Oktanio — a curious mind who loves breaking and building systems �
 <p align="center">
   <a href="https://linkedin.com/in/yohanesokta" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
   <a href="mailto:admin@yohancloud.biz.id"><img src="https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-  <a href="https://cv.yohancloud.biz.id" target="_blank"><img src="https://img.shields.io/badge/🌐%20Portfolio-Yohanes%20Portofolio-181717?style=for-the-badge&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://cv.yohancloud.biz.id" target="_blank"><img src="https://img.shields.io/badge/🌐%20Portfolio-Yohanes%20Oktanio-181717?style=for-the-badge&logoColor=white" alt="Portfolio" /></a>
 </p>
