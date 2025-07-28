@@ -6,22 +6,39 @@
 </p>
 
 ---
-
 ### 🚀 About Me
-I'm Yohanes Oktanio — a curious mind who loves breaking and building systems ✨
+- 🐧 Living in the terminal & customizing Linux setups
+- 🔧 Building APIs, automating deployments, and managing servers
+- ☁️ Obsessed with cloud, containers, and clean code
+- 💡 Always hacking on something new
 
-🔧 I specialize in **Backend Development**, enjoy tinkering with **Linux**, and aim to master the art of **DevOps Engineering**. Whether it's crafting REST APIs, managing cloud deployments, or optimizing system performance, I find joy in turning complex problems into elegant solutions.
+> *“I used Arch btw… but then I riced it into oblivion.”*
 
-🧠 I'm currently diving deep into topics like:
-- **System Design & Architecture**
-- **Containerization with Docker**
-- **CI/CD workflows & automation**
-- **Distributed Systems & WebSocket services**
+---
 
-🔥 I'm a strong believer in the **Open Source movement**, love to self-host services, and customize my Linux setup to the bones. When I'm not coding, you might find me reading docs I don’t need... just for fun 😄
 
-🚀 My long-term vision is to build scalable infrastructure, contribute to impactful open-source projects, and help make the internet a more reliable, efficient space.
+### 🧰 Toolbox
+<p align="center">
+  <img src="https://img.shields.io/badge/Linux-111827?style=for-the-badge&logo=linux&logoColor=white">
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/Node.js-43853d?style=for-the-badge&logo=node-dot-js&logoColor=white">
+  <img src="https://img.shields.io/badge/Laravel-f55247?style=for-the-badge&logo=laravel&logoColor=white">
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white">
+  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
+</p>
 
+---
+
+### 🎯 Currently Exploring
+- 🔥 Flutter + Firebase + Background Services
+- 🔍 Privacy-focused apps for everyday users
+
+---
 ---
 
 ### 📊 GitHub Stats<div align="center">
