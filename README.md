@@ -51,7 +51,7 @@
         <img src="https://github-readme-streak-stats.herokuapp.com?user=yohanesokta&theme=github-dark&hide_border=true&background=00000000" height="165" />
       </td>
       <td>
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yohanesokta&layout=compact&langs_count=6&theme=github_dark&hide_border=true&bg_color=00000000" height="165" />
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yohanesokta&layout=compact&langs_count=6&theme=github_dark&hide_border=true&bg_color=00000000&exclude_repo=dasar-pemrograman-web-4,pendataan-maba-dev,hanzsoft-websites,Ramadhan-Code-Fest,math_app-main,WEB-APPS-absensi_siswa" height="165" />
       </td>
     </tr>
   </table>
