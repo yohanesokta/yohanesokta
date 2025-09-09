@@ -2,11 +2,11 @@
 <h3 align="center">Backend Developer & DevOps Enthusiast • Student at Universitas Trunojoyo Madura</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?lines=Backend%20Developer%20in%20progress...;Loves%20Linux%20and%20Open%20Source;Always%20learning%20and%20building%20cool%20stuff!&font=Fira%20Code&center=true&width=440&height=45&pause=1000&color=FF79C6" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com/?lines=Backend%20Developer%20in%20progress...;Loves%20Linux%20and%20Open%20Source;Always%20learning%20and%20building%20cool%20stuff!&font=Fira%20Code&center=true&width=440&height=45&pause=1000&color=FFFFFF&weight=700" alt="Typing SVG" />
 </p>
 
 ---
-### 🚀 About Me
+# About Me
 - 🐧 Living in the terminal & customizing Linux setups
 - 🔧 Building APIs, automating deployments, and managing servers
 - ☁️ Obsessed with cloud, containers, and clean code
@@ -34,11 +34,22 @@
 
 ---
 
-### 🎯 Currently Exploring
-- 🔥 Flutter + Firebase + Background Services
-- 🔍 Privacy-focused apps for everyday users
+### Code Snip 
+<img src='https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=black' >
 
----
+```java
+public class AboutMe {
+    public static void main(String[] args) {
+        String name = "Yohanes Oktanio";
+        String[] skills = {"Linux", "Flutter", "Dart", "TypeScript", "Node.js", "Laravel", "PostgreSQL", "Docker", "AWS"};
+
+        System.out.println("Hi, I'm " + name);
+        System.out.println("Skills:");
+        for (String s : skills) System.out.print(" • " + s);
+    }
+}
+```
+
 ---
 
 ### 📊 GitHub Stats<div align="center">
