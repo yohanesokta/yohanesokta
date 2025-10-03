@@ -5,12 +5,6 @@
   <img src="https://readme-typing-svg.demolab.com/?lines=Backend%20Developer%20in%20progress...;Loves%20Linux%20and%20Open%20Source;Always%20learning%20and%20building%20cool%20stuff!&font=Fira%20Code&center=true&width=440&height=45&pause=1000&color=FFFFFF&weight=700" alt="Typing SVG" />
 </p>
 
----
-# About Me
-- 🐧 Living in the terminal & customizing Linux setups
-- 🔧 Building APIs, automating deployments, and managing servers
-- ☁️ Obsessed with cloud, containers, and clean code
-- 💡 Always hacking on something new
 
 > *“I used Arch btw… but then I riced it into oblivion.”*
 
@@ -50,25 +44,7 @@ public class AboutMe {
 }
 ```
 
----
-
-### 📊 GitHub Stats<div align="center">
-  <table>
-    <tr>
-      <td>
-        <img src="https://github-readme-stats.vercel.app/api?username=yohanesokta&show_icons=true&count_private=true&include_all_commits=true&theme=github_dark&hide_border=true&bg_color=00000000" height="165" />
-      </td>
-      <td>
-        <img src="https://github-readme-streak-stats.herokuapp.com?user=yohanesokta&theme=github-dark&hide_border=true&background=00000000" height="165" />
-      </td>
-      <td>
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yohanesokta&layout=compact&langs_count=6&theme=github_dark&hide_border=true&bg_color=00000000&exclude_repo=dasar-pemrograman-web-4,pendataan-maba-dev,hanzsoft-websites,Ramadhan-Code-Fest,math_app-main,WEB-APPS-absensi_siswa" height="165" />
-      </td>
-    </tr>
-  </table>
-</div>
-
-
+[![An image of @yohanesokta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/yohanesokta)](https://holopin.io/@yohanesokta)
 ---
 
 ### 🌍 Let's Connect!
