@@ -28,22 +28,6 @@
 
 ---
 
-### Code Snip 
-<img src='https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=black' >
-
-```java
-public class AboutMe {
-    public static void main(String[] args) {
-        String name = "Yohanes Oktanio";
-        String[] skills = {"Linux", "Flutter", "Dart", "TypeScript", "Node.js", "Laravel", "PostgreSQL", "Docker", "AWS"};
-
-        System.out.println("Hi, I'm " + name);
-        System.out.println("Skills:");
-        for (String s : skills) System.out.print(" • " + s);
-    }
-}
-```
-
 [![An image of @yohanesokta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/yohanesokta)](https://holopin.io/@yohanesokta)
 ---
 
