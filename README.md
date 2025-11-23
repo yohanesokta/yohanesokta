@@ -8,28 +8,17 @@
 
 > *“I used Arch btw… but then I riced it into oblivion.”*
 
----
 
 
-### 🧰 Toolbox
-<p align="center">
-  <img src="https://img.shields.io/badge/Linux-111827?style=for-the-badge&logo=linux&logoColor=white">
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
-  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-  <img src="https://img.shields.io/badge/Node.js-43853d?style=for-the-badge&logo=node-dot-js&logoColor=white">
-  <img src="https://img.shields.io/badge/Laravel-f55247?style=for-the-badge&logo=laravel&logoColor=white">
-  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
-  <img src="https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white">
-  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white">
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
-</p>
-
----
 
 [![An image of @yohanesokta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/yohanesokta)](https://holopin.io/@yohanesokta)
 ---
+
+
+---
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yohanesokta/yohanesokta/refs/heads/main/term.cast.svg">
+</p>
 
 ### 🌍 Let's Connect!
 <p align="center">
