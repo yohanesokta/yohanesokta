@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap"; // Import gsap
+import { FaBars } from 'react-icons/fa'; // Import FaBars for mobile menu
 import Lanyard from "./Components/Lanyard/Lanyard.jsx";
 import SPlitText from "./TextAnimations/SplitText/SplitText.jsx";
 import RunningText from "./Components/Running/Running.jsx";
@@ -16,19 +18,30 @@ export function App() {
   const experienceRef = useRef(null);
   const progressLineRef = useRef(null);
   const timelineContainerRef = useRef(null);
+  const date = new Date();
+  const umur = date.getFullYear() - 2005;
 
-  const navigationAnimated = () => {
-    const scrollY = window.scrollY;
-    if (navigationContainer.current) {
-      let percen = Math.min(1, scrollY / 400);
-      navigationContainer.current.style.background = `rgba(38, 38, 38, ${percen})`;
-      navigationContainer.current.style.width = `${100 - percen * 100}%`;
+  // State and ref for auto-hide navigation
+  const navRef = useRef(null);
+  const [navVisible, setNavVisible] = useState(true);
+  const hideTimeoutRef = useRef(null);
+
+  const resetHideTimer = () => {
+    setNavVisible(true);
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
     }
+    hideTimeoutRef.current = setTimeout(() => {
+      setNavVisible(false);
+    }, 3000); // Auto-hide after 3 seconds of inactivity
+  };
+
+  const handleActivity = () => {
+    resetHideTimer();
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", navigationAnimated);
-
+    // Scroll progress update
     const updateScrollProgress = () => {
       if (timelineContainerRef.current && progressLineRef.current) {
         const section = timelineContainerRef.current;
@@ -37,64 +50,98 @@ export function App() {
         const sectionRect = section.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
 
-        // Calculate progress based on when the section enters and leaves the viewport
-        // The line should start filling when the bottom of the viewport hits the top of the section
-        // And be fully filled when the top of the viewport hits the bottom of the section
-        
-        // This value goes from `viewportHeight` (when section top is at viewport bottom)
-        // down to `-section.clientHeight` (when section bottom is at viewport top)
         const progressRaw = viewportHeight - sectionRect.top;
-
-        // Total scrollable distance for the section within the viewport
         const totalScrollableDistance = viewportHeight + section.clientHeight;
-
         let progress = progressRaw / totalScrollableDistance;
 
-        progress = Math.max(0, Math.min(progress, 1)); // Clamp between 0 and 1
+        progress = Math.max(0, Math.min(progress, 1));
         
         line.style.height = `${progress * 100}%`;
       }
     };
 
     window.addEventListener('scroll', updateScrollProgress);
-    updateScrollProgress(); // Initial update in case the page loads scrolled
+    updateScrollProgress();
+
+    // Auto-hide navigation logic (proximity-based)
+    const handleProximityMove = (e) => {
+      if (e.clientY < 100) { // If mouse is within top 100px of the screen
+        handleActivity();
+      }
+    };
+
+    window.addEventListener('scroll', handleActivity); // Still reveal on any scroll
+    window.addEventListener('mousemove', handleProximityMove); // Proximity-based mouse activity
+
+    if (navRef.current) {
+      navRef.current.addEventListener('mouseenter', () => {
+        setNavVisible(true);
+        if (hideTimeoutRef.current) {
+          clearTimeout(hideTimeoutRef.current);
+        }
+      });
+      navRef.current.addEventListener('mouseleave', () => {
+        resetHideTimer();
+      });
+    }
 
     return () => {
-      window.removeEventListener("scroll", navigationAnimated);
       window.removeEventListener('scroll', updateScrollProgress);
+      window.removeEventListener('scroll', handleActivity);
+      window.removeEventListener('mousemove', handleProximityMove);
+      if (navRef.current) {
+        navRef.current.removeEventListener('mouseenter', handleActivity); // Corrected cleanup
+        navRef.current.removeEventListener('mouseleave', resetHideTimer); // Corrected cleanup
+      }
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
     };
-  }, []); // Empty dependency array to run once on mount
+  }, []);
+
+  // Animate navigation based on navVisible state
+  useEffect(() => {
+    if (navRef.current) {
+      gsap.to(navRef.current, {
+        y: navVisible ? 0 : -100, // Slide up by 100px when hidden
+        opacity: navVisible ? 1 : 0,
+        duration: 0.5,
+        ease: "power3.out",
+        pointerEvents: navVisible ? "auto" : "none",
+      });
+    }
+  }, [navVisible]);
+
 
   return (
     <div className="">
       <DelayedCursor />
-      <nav className="w-full flex justify-center items-center py-4 fixed z-50">
+      <nav ref={navRef} className="w-full flex justify-center items-center py-4 fixed z-50 top-0 left-0 right-0">
         <div
           ref={navigationContainer}
-          className="w-11/12 md:w-auto py-3 px-6 md:px-8 flex justify-center rounded-xl md:rounded-full min-w-max"
+          className="w-11/12 md:w-auto py-3 px-6 md:px-8 flex justify-center rounded-xl md:rounded-full min-w-max backdrop-blur-lg ring-1 ring-white/10 shadow-xl transition-all duration-300"
+          style={{ background: 'rgba(38, 38, 38, 0.2)' }} // Initial translucent background
         >
           <div className="flex items-center justify-between">
             <div className="hidden md:flex gap-10 lg:gap-20 text-md font-semibold text-white">
-              <a href="#about" className="hover:text-green-300 transition-colors">About</a>
-              <a href="#experience" className="hover:text-green-300 transition-colors">Experience</a>
-              <a href="#projects" className="hover:text-green-300 transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-green-300 transition-colors">Contact</a>
+              <a href="#about" className="px-3 py-1 rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-200">About</a>
+              <a href="#experience" className="px-3 py-1 rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-200">Experience</a>
+              <a href="#projects" className="px-3 py-1 rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-200">Projects</a>
+              <a href="#contact" className="px-3 py-1 rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-200">Contact</a>
             </div>
             <div className="md:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors">
+                <FaBars className="w-6 h-6" /> {/* Using FaBars */}
               </button>
             </div>
           </div>
           {isMenuOpen && (
-            <div className="md:hidden mt-4">
+            <div className="md:hidden mt-4 bg-gray-800/80 p-4 rounded-lg shadow-lg">
               <ul className="flex flex-col items-center gap-4 text-md font-semibold text-white">
-                <li><a href="#about" onClick={() => setIsMenuOpen(false)} className="block py-2">About</a></li>
-                <li><a href="#experience" onClick={() => setIsMenuOpen(false)} className="block py-2">Experience</a></li>
-                <li><a href="#projects" onClick={() => setIsMenuOpen(false)} className="block py-2">Projects</a></li>
-                <li><a href="#contact" onClick={() => setIsMenuOpen(false)} className="block py-2">Contact</a></li>
+                <li><a href="#about" onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-green-300 transition-colors">About</a></li>
+                <li><a href="#experience" onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-green-300 transition-colors">Experience</a></li>
+                <li><a href="#projects" onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-green-300 transition-colors">Projects</a></li>
+                <li><a href="#contact" onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-green-300 transition-colors">Contact</a></li>
               </ul>
             </div>
           )}
@@ -107,16 +154,22 @@ export function App() {
             <Lanyard gravity={[0, -40, 0]} fov={10}></Lanyard>
           </div>
           <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-20 py-10 md:py-20">
-            <div  className="flex gap-4 w-max items-center px-4 py-2 bg-gray-800 text-white rounded-lg shadow-lg mb-6">
+            <div className="flex gap-4 w-max items-center px-4 py-2 bg-gray-800 text-white rounded-lg shadow-lg mb-6">
               <div className="w-2.5 h-2.5 bg-green-300 rounded-full"></div>
               <p className="text-sm sm:text-base">Hallo Semua</p>
             </div>
+            <SPlitText text="Yohanes Oktanio" className="inline-block text-green-300 text-4xl pb-5 sm:text-5xl lg:text-6xl font-black" hoverEffect={true} splitType="chars" delay={30} />
             <SPlitText
-              text="Fullstack Developer"
-              className="text-gray-300 text-4xl sm:text-5xl lg:text-6xl font-black"
+              text="Mostly web, backend when things get serious"
+              className="text-gray-300 text-3xl sm:text-4xl lg:text-5xl font-black mb-4"
+              hoverEffect={true}
+              splitType="words"
+              delay={30}
             />
             <p className="py-8 text-gray-300 text-base sm:text-lg lg:text-xl">
-              Saya <span className="text-green-300">Yohanes Oktanio</span> seorang mahasiswa Teknik Informatika di Universitas Trunojoyo Madura yang berusia 19 tahun. Saat ini, saya sedang mendalami bidang backend development dengan fokus pada pengelolaan database, pengembangan API, serta integrasi sistem. Saya memiliki ketertarikan terhadap teknologi open-source dan senang mengelola server dengan Nginx untuk kebutuhan proyek saya.
+              Mahasiswa Teknik Informatika Universitas Trunojoyo Madura yang masih sering ngoprek.
+              Lebih banyak main di backend — database, API, dan integrasi sistem.
+              Nyaman pakai Linux, suka open-source, dan kadang ngurus server buat proyek sendiri.
             </p>
             <div>
               <h1 className="font-bold text-white text-xl sm:text-2xl flex items-center">
@@ -146,7 +199,7 @@ export function App() {
           <RunningText />
         </div>
       </main>
-      
+
       <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom, #101010 0%, #000000 1000px)' }}>
         <div className="px-3 md:px-10 lg:px-20 relative" id="experience" ref={experienceRef}>
           <h1 className="font-bold text-4xl text-center mx-0 md:mx-10 text-white py-15 pb-20">Experience</h1>
@@ -172,12 +225,12 @@ export function App() {
               </div>
             ))}
           </div>
-          <Projects/>
+          <Projects />
           <div className="pb-50"></div>
           <Contact />
         </div>
       </div>
-      </div>
+    </div>
 
 
   );

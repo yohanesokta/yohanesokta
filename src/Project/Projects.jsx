@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaReact, FaNodeJs, FaFigma, FaPython, FaWindows, FaLaravel, FaPhp, FaGithub, FaHtml5, FaLinux, FaApple, FaWhatsapp } from 'react-icons/fa';
 import { SiApache, SiCloudflare, SiCloudinary, SiCss3, SiElectron, SiExpress, SiFirebase, SiFlutter, SiHono, SiJavascript, SiMariadb, SiMongodb, SiMysql, SiNextdotjs, SiNginx, SiPostgresql, SiRedis, SiRust, SiTauri, SiTypescript, SiWebpack, SiXcode } from 'react-icons/si';
 import { FiArrowUpRight } from 'react-icons/fi';
@@ -18,8 +20,8 @@ const projects = [
 
 
     ],
-    link: 'https://github.com/yohanesokta/Pro-Mind',
-    github: "https://github.com/yohanesokta/Pro-Mind"
+    github: 'https://github.com/yohanesokta/WebServices-Gajah',
+    link: "https://www.gajahweb.tech"
   },
   {
     image: '/images/promind.jpg',
@@ -213,71 +215,86 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-50"> {/* Increased gap for alternating sections */}
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative 
-                ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}
-              `}
-            >
-              {/* Project Image/Media */}
-              <div className="w-full md:w-1/2 relative group rounded-xl overflow-hidden shadow-2xl transition-all duration-300 transform hover:scale-102">
-                <img 
-                  src={project.image} 
-                  alt={`Gambar ${project.title}`} 
-                  className="object-cover w-full h-64 md:h-80 lg:h-96 transition-transform duration-500 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <h3 className="text-3xl font-bold text-white leading-tight">{project.title}</h3>
-                </div>
-              </div>
+        <div className="flex flex-col gap-24"> {/* Increased gap for alternating sections */}
+          {projects.map((project, index) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true, amount: 0.3 }); // Play animation once when 30% of element is in view
 
-              {/* Project Details */}
-              <div className="w-full md:w-1/2 p-6 md:p-0">
-                <h3 className="text-base font-semibold text-cyan-400 mb-2">Full Projects</h3>
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                  {project.title}
-                </h2>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  {project.description}
-                </p>
+            const variants = {
+              hidden: { opacity: 0, x: index % 2 === 0 ? -100 : 100 }, // Slide from left for even, right for odd
+              visible: { opacity: 1, x: 0 },
+            };
 
-                <div className="flex flex-wrap items-center gap-3 mb-8">
-                  {project.stack.map((tech, i) => (
-                    <div key={i} className="flex items-center gap-2 px-4 py-2 bg-gray-700/50 rounded-full text-sm font-medium text-gray-200 shadow-md">
-                      {tech.icon && <tech.icon className="text-lg text-cyan-300" />}
-                      <span>{tech.name}</span>
-                    </div>
-                  ))}
+            return (
+              <motion.div
+                ref={ref}
+                key={index}
+                variants={variants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative 
+                  ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}
+                `}
+              >
+                {/* Project Image/Media */}
+                <div className="w-full md:w-1/2 relative group rounded-xl overflow-hidden shadow-2xl transition-all duration-300 transform hover:scale-102">
+                  <img 
+                    src={project.image} 
+                    alt={`Gambar ${project.title}`} 
+                    className="object-cover w-full h-64 md:h-80 lg:h-96 transition-transform duration-500 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <h3 className="text-3xl font-bold text-white leading-tight">{project.title}</h3>
+                  </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-blue-700 transform hover:-translate-y-1"
-                    >
-                      Lihat Proyek <FiArrowUpRight size={20} />
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Lihat Kode di GitHub"
-                      className="inline-flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-300 border-2 border-gray-600 rounded-lg transition-colors duration-300 hover:text-white hover:border-gray-400"
-                    >
-                        <FaGithub size={24} /> GitHub
-                    </a>
-                  )}
+                {/* Project Details */}
+                <div className="w-full md:w-1/2 p-6 md:p-0">
+                  <h3 className="text-base font-semibold text-cyan-400 mb-2">Full Projects</h3>
+                  <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                    {project.title}
+                  </h2>
+                  <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-3 mb-8">
+                    {project.stack.map((tech, i) => (
+                      <div key={i} className="flex items-center gap-2 px-4 py-2 bg-gray-700/50 rounded-full text-sm font-medium text-gray-200 shadow-md">
+                        {tech.icon && <tech.icon className="text-lg text-cyan-300" />}
+                        <span>{tech.name}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-blue-700 transform hover:-translate-y-1"
+                      >
+                        Lihat Proyek <FiArrowUpRight size={20} />
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Lihat Kode di GitHub"
+                        className="inline-flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-300 border-2 border-gray-600 rounded-lg transition-colors duration-300 hover:text-white hover:border-gray-400"
+                      >
+                          <FaGithub size={24} /> GitHub
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

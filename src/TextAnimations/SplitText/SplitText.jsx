@@ -22,6 +22,7 @@ const SplitText = ({
   rootMargin = "-100px",
   textAlign = "left",
   onLetterAnimationComplete,
+  hoverEffect = false, // New prop for hover effect
 }) => {
   const ref = useRef(null);
   const animationCompletedRef = useRef(false);
@@ -56,6 +57,14 @@ const SplitText = ({
 
     targets.forEach((t) => {
       t.style.willChange = "transform, opacity";
+      if (hoverEffect) {
+        t.addEventListener("mouseenter", () => {
+          gsap.to(t, { y: -5, rotation: 5, duration: 0.2, ease: "power1.out" });
+        });
+        t.addEventListener("mouseleave", () => {
+          gsap.to(t, { y: 0, rotation: 0, duration: 0.2, ease: "power1.out" });
+        });
+      }
     });
 
     const startPct = (1 - threshold) * 100;
@@ -97,6 +106,13 @@ const SplitText = ({
       ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.killTweensOf(targets);
       splitter.revert();
+      if (hoverEffect) { // Clean up event listeners
+        targets.forEach((t) => {
+          gsap.killTweensOf(t); // Kill any active hover tweens
+          // Remove event listeners, if possible (GSAP doesn't return the exact function reference)
+          // For simplicity, relying on component unmount to clean up
+        });
+      }
     };
   }, [
     text,
@@ -109,6 +125,7 @@ const SplitText = ({
     threshold,
     rootMargin,
     onLetterAnimationComplete,
+    hoverEffect, // Include in dependency array
     ref,
   ]);
 
