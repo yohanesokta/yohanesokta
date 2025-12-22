@@ -13,6 +13,9 @@ import experience from "./static/experience.json";
 export function App() {
   const navigationContainer = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const experienceRef = useRef(null);
+  const progressLineRef = useRef(null);
+  const timelineContainerRef = useRef(null);
 
   const navigationAnimated = () => {
     const scrollY = window.scrollY;
@@ -25,8 +28,40 @@ export function App() {
 
   useEffect(() => {
     window.addEventListener("scroll", navigationAnimated);
+
+    const updateScrollProgress = () => {
+      if (timelineContainerRef.current && progressLineRef.current) {
+        const section = timelineContainerRef.current;
+        const line = progressLineRef.current;
+
+        const sectionRect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Calculate progress based on when the section enters and leaves the viewport
+        // The line should start filling when the bottom of the viewport hits the top of the section
+        // And be fully filled when the top of the viewport hits the bottom of the section
+        
+        // This value goes from `viewportHeight` (when section top is at viewport bottom)
+        // down to `-section.clientHeight` (when section bottom is at viewport top)
+        const progressRaw = viewportHeight - sectionRect.top;
+
+        // Total scrollable distance for the section within the viewport
+        const totalScrollableDistance = viewportHeight + section.clientHeight;
+
+        let progress = progressRaw / totalScrollableDistance;
+
+        progress = Math.max(0, Math.min(progress, 1)); // Clamp between 0 and 1
+        
+        line.style.height = `${progress * 100}%`;
+      }
+    };
+
+    window.addEventListener('scroll', updateScrollProgress);
+    updateScrollProgress(); // Initial update in case the page loads scrolled
+
     return () => {
       window.removeEventListener("scroll", navigationAnimated);
+      window.removeEventListener('scroll', updateScrollProgress);
     };
   }, []); // Empty dependency array to run once on mount
 
@@ -114,14 +149,30 @@ export function App() {
 
 
 
-      <div className="px-3 md:px-10 lg:px-20 bg-neutral-900 relative" id="experience">
+      <div className="px-3 md:px-10 lg:px-20 bg-neutral-900 relative" id="experience" ref={experienceRef}>
         <div className="absolute bottom-0 h-100 w-full cat-grad left-0"></div>
         <h1 className="font-bold text-4xl text-center mx-0 md:mx-10 text-white py-15 pb-20">Experience</h1>
         {/* start loop */}
-        <div className="flex flex-col gap-8">
-          {experience.map((data, index) =>
-            <ExperienceCard key={index} experience={data} isLast={index === experience.length - 1} />
-          )}
+        <div ref={timelineContainerRef} className="relative wrap overflow-hidden p-10 h-full max-w-4xl mx-auto">
+          <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style={{ left: '50%' }}></div>
+          {/* Progress Line (light orange) */}
+          <div ref={progressLineRef} className="absolute w-0.5 bg-orange-400" style={{ left: '50%', top: 0, height: '0%' }}></div>
+          {experience.map((data, index) => (
+            <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}>
+              <div className="order-1 w-5/12"></div> {/* Empty div to push content */}
+              <div className="z-10 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
+                <h1 className="mx-auto font-semibold text-lg text-white">
+                  <svg className="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.628A2.25 2.25 0 0118.75 16H5.25A2.25 2.25 0 013 13.628V10.372A2.25 2.25 0 015.25 8h13.5A2.25 2.25 0 0121 10.372v3.256z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.75 8V6a3 3 0 00-3-3h-3a3 3 0 00-3 3v2m5.25 8v2a3 3 0 01-3 3h-3a3 3 0 01-3-3v-2"></path>
+                  </svg>
+                </h1>
+              </div>
+              <div className="order-1 w-5/12 px-1 py-4">
+                <ExperienceCard experience={data} />
+              </div>
+            </div>
+          ))}
         </div>
         <Projects/>
         <div className="pb-50"></div>
