@@ -7,6 +7,7 @@ import RunningText from "./Components/Running/Running.jsx";
 import DelayedCursor from "./Animations/DelayedCursor/DelayedCursor.jsx";
 import SpotlightCard from "./Components/SpotlightCard/SpotlightCard.jsx";
 import Projects from "./Project/Projects.jsx";
+import CiCdGraphic from "./Components/CiCdGraphic/CiCdGraphic.jsx"; // Import CiCdGraphic
 import Contact from "./Project/Contact.jsx";
 import ExperienceCard from "./Project/ExperienceCard.jsx";
 
@@ -40,6 +41,13 @@ export function App() {
     resetHideTimer();
   };
 
+  // Proximity-based mouse move handler
+  const handleProximityMove = (e) => {
+    if (e.clientY < 100) { // If mouse is within top 100px of the screen
+      handleActivity();
+    }
+  };
+
   useEffect(() => {
     // Scroll progress update
     const updateScrollProgress = () => {
@@ -70,19 +78,24 @@ export function App() {
       }
     };
 
+    const handleMouseEnterNav = () => {
+      setNavVisible(true);
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+
+    const handleMouseLeaveNav = () => {
+      resetHideTimer();
+    };
+
+
     window.addEventListener('scroll', handleActivity); // Still reveal on any scroll
     window.addEventListener('mousemove', handleProximityMove); // Proximity-based mouse activity
 
     if (navRef.current) {
-      navRef.current.addEventListener('mouseenter', () => {
-        setNavVisible(true);
-        if (hideTimeoutRef.current) {
-          clearTimeout(hideTimeoutRef.current);
-        }
-      });
-      navRef.current.addEventListener('mouseleave', () => {
-        resetHideTimer();
-      });
+      navRef.current.addEventListener('mouseenter', handleMouseEnterNav);
+      navRef.current.addEventListener('mouseleave', handleMouseLeaveNav);
     }
 
     return () => {
@@ -90,8 +103,8 @@ export function App() {
       window.removeEventListener('scroll', handleActivity);
       window.removeEventListener('mousemove', handleProximityMove);
       if (navRef.current) {
-        navRef.current.removeEventListener('mouseenter', handleActivity); // Corrected cleanup
-        navRef.current.removeEventListener('mouseleave', resetHideTimer); // Corrected cleanup
+        navRef.current.removeEventListener('mouseenter', handleMouseEnterNav);
+        navRef.current.removeEventListener('mouseleave', handleMouseLeaveNav);
       }
       if (hideTimeoutRef.current) {
         clearTimeout(hideTimeoutRef.current);
@@ -226,6 +239,7 @@ export function App() {
             ))}
           </div>
           <Projects />
+          <CiCdGraphic /> {/* Render the CiCdGraphic component */}
           <div className="pb-50"></div>
           <Contact />
         </div>
