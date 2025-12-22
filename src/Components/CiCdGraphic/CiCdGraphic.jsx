@@ -98,6 +98,7 @@ const CiCdGraphic = () => {
                         elementsSelectable={false}
                         zoomOnDoubleClick={false}
                         panOnScroll={false}
+                        proOptions={{ hideAttribution: true }}
                     >
                         <Background variant="dots" gap={12} size={1} />
                     </ReactFlow>
