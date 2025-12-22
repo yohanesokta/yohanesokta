@@ -146,40 +146,38 @@ export function App() {
           <RunningText />
         </div>
       </main>
-
-
-
-      <div className="px-3 md:px-10 lg:px-20 bg-neutral-900 relative" id="experience" ref={experienceRef}>
-        <div className="absolute bottom-0 h-100 w-full cat-grad left-0"></div>
-        <h1 className="font-bold text-4xl text-center mx-0 md:mx-10 text-white py-15 pb-20">Experience</h1>
-        {/* start loop */}
-        <div ref={timelineContainerRef} className="relative wrap overflow-hidden p-10 h-full max-w-4xl mx-auto">
-          <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style={{ left: '50%' }}></div>
-          {/* Progress Line (light orange) */}
-          <div ref={progressLineRef} className="absolute w-0.5 bg-orange-400" style={{ left: '50%', top: 0, height: '0%' }}></div>
-          {experience.map((data, index) => (
-            <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}>
-              <div className="order-1 w-5/12"></div> {/* Empty div to push content */}
-              <div className="z-10 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
-                <h1 className="mx-auto font-semibold text-lg text-white">
-                  <svg className="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.628A2.25 2.25 0 0118.75 16H5.25A2.25 2.25 0 013 13.628V10.372A2.25 2.25 0 015.25 8h13.5A2.25 2.25 0 0121 10.372v3.256z"></path>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.75 8V6a3 3 0 00-3-3h-3a3 3 0 00-3 3v2m5.25 8v2a3 3 0 01-3 3h-3a3 3 0 01-3-3v-2"></path>
-                  </svg>
-                </h1>
+      
+      <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom, #101010 0%, #000000 1000px)' }}>
+        <div className="px-3 md:px-10 lg:px-20 relative" id="experience" ref={experienceRef}>
+          <h1 className="font-bold text-4xl text-center mx-0 md:mx-10 text-white py-15 pb-20">Experience</h1>
+          {/* start loop */}
+          <div ref={timelineContainerRef} className="relative wrap overflow-hidden p-10 h-full max-w-4xl mx-auto">
+            <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style={{ left: '50%' }}></div>
+            {/* Progress Line (light orange) */}
+            <div ref={progressLineRef} className="absolute w-0.5 bg-orange-400" style={{ left: '50%', top: 0, height: '0%' }}></div>
+            {experience.map((data, index) => (
+              <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}>
+                <div className="order-1 w-5/12"></div>
+                <div className="z-10 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
+                  <h1 className="mx-auto font-semibold text-lg text-white">
+                    <svg className="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.628A2.25 2.25 0 0118.75 16H5.25A2.25 2.25 0 013 13.628V10.372A2.25 2.25 0 015.25 8h13.5A2.25 2.25 0 0121 10.372v3.256z"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.75 8V6a3 3 0 00-3-3h-3a3 3 0 00-3 3v2m5.25 8v2a3 3 0 01-3 3h-3a3 3 0 01-3-3v-2"></path>
+                    </svg>
+                  </h1>
+                </div>
+                <div className="order-1 w-5/12 px-1 py-4">
+                  <ExperienceCard experience={data} />
+                </div>
               </div>
-              <div className="order-1 w-5/12 px-1 py-4">
-                <ExperienceCard experience={data} />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <Projects/>
+          <div className="pb-50"></div>
+          <Contact />
         </div>
-        <Projects/>
-        <div className="pb-50"></div>
       </div>
-      <Contact />
-
-    </div>
+      </div>
 
 
   );

@@ -202,8 +202,8 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 sm:py-24 bg-gradient-to-b ">
-      <div className="container px-4 mx-auto">
+    <section id="projects" className="py-20 sm:py-24 ">
+      <div className="container px-4 mx-auto max-w-6xl">
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Proyek Pilihan Saya
@@ -213,49 +213,65 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="flex flex-col gap-50"> {/* Increased gap for alternating sections */}
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative flex flex-col justify-between p-6 bg-white/5 border border-white/10 rounded-xl transition-all duration-300 hover:border-cyan-400/50 hover:-translate-y-2"
+              className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative 
+                ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}
+              `}
             >
-              <div>
-                <div className="mb-6 overflow-hidden rounded-lg">
-                  <img src={project.image} alt={`Gambar ${project.title}`} className="object-cover w-full h-48 transition-transform duration-500 group-hover:scale-105" />
+              {/* Project Image/Media */}
+              <div className="w-full md:w-1/2 relative group rounded-xl overflow-hidden shadow-2xl transition-all duration-300 transform hover:scale-102">
+                <img 
+                  src={project.image} 
+                  alt={`Gambar ${project.title}`} 
+                  className="object-cover w-full h-64 md:h-80 lg:h-96 transition-transform duration-500 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <h3 className="text-3xl font-bold text-white leading-tight">{project.title}</h3>
                 </div>
-
-                <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-base leading-relaxed mb-6">{project.description}</p>
               </div>
 
-              <div>
-                <div className="flex flex-wrap items-center gap-3 mb-6">
+              {/* Project Details */}
+              <div className="w-full md:w-1/2 p-6 md:p-0">
+                <h3 className="text-base font-semibold text-cyan-400 mb-2">Full Projects</h3>
+                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                  {project.title}
+                </h2>
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3 mb-8">
                   {project.stack.map((tech, i) => (
-                    <div key={i} className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full">
-                      <tech.icon className="text-cyan-400" />
-                      <span className="text-xs text-gray-300">{tech.name}</span>
+                    <div key={i} className="flex items-center gap-2 px-4 py-2 bg-gray-700/50 rounded-full text-sm font-medium text-gray-200 shadow-md">
+                      {tech.icon && <tech.icon className="text-lg text-cyan-300" />}
+                      <span>{tech.name}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white transition-colors bg-cyan-600 rounded-md hover:bg-cyan-700"
-                  >
-                    Lihat Proyek <FiArrowUpRight />
-                  </a>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-blue-700 transform hover:-translate-y-1"
+                    >
+                      Lihat Proyek <FiArrowUpRight size={20} />
+                    </a>
+                  )}
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       title="Lihat Kode di GitHub"
-                      className="text-gray-400 transition-colors hover:text-white"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-300 border-2 border-gray-600 rounded-lg transition-colors duration-300 hover:text-white hover:border-gray-400"
                     >
-                      <FaGithub size={24} />
+                        <FaGithub size={24} /> GitHub
                     </a>
                   )}
                 </div>

@@ -38,7 +38,7 @@ ${message}
   return (
     <section id="contact" className="relative py-24 sm:py-32 ">
       <div className="absolute top-0 right-0 w-64 h-64 -translate-y-1/2 rounded-full bg-gradient-to-br from-purple-600 to-indigo-800 opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 translate-y-1/2 rounded-full bg-gradient-to-br from-sky-500 to-cyan-600 opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-35 left-0 w-64 h-64 translate-y-1/2 rounded-full bg-gradient-to-br from-sky-500 to-cyan-600 opacity-20 blur-3xl"></div>
 
       <div className="container px-4 mx-auto">
         <div className="max-w-2xl mx-auto mb-16 text-center">
