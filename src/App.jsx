@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import Lanyard from "./Components/Lanyard/Lanyard.jsx";
 import SPlitText from "./TextAnimations/SplitText/SplitText.jsx";
 import RunningText from "./Components/Running/Running.jsx";
-import SplashCursor from "./Animations/SplashCursor/SplashCursor.jsx";
+import DelayedCursor from "./Animations/DelayedCursor/DelayedCursor.jsx";
 import SpotlightCard from "./Components/SpotlightCard/SpotlightCard.jsx";
 import Projects from "./Project/Projects.jsx";
 import Contact from "./Project/Contact.jsx";
+import ExperienceCard from "./Project/ExperienceCard.jsx";
 
 import experience from "./static/experience.json";
 
@@ -27,10 +28,11 @@ export function App() {
     return () => {
       window.removeEventListener("scroll", navigationAnimated);
     };
-  }, []);
+  }, []); // Empty dependency array to run once on mount
 
   return (
     <div className="">
+      <DelayedCursor />
       <nav className="w-full flex justify-center items-center py-4 fixed z-50">
         <div
           ref={navigationContainer}
@@ -116,23 +118,10 @@ export function App() {
         <div className="absolute bottom-0 h-100 w-full cat-grad left-0"></div>
         <h1 className="font-bold text-4xl text-center mx-0 md:mx-10 text-white py-15 pb-20">Experience</h1>
         {/* start loop */}
-        <div className="flex flex-col gap-10">
-          <div className="flex w-full gap-4 flex-wrap justify-between">
-            {experience.map(data =>
-              <SpotlightCard className="w-full max-w-lg"
-                borderColors={["#f472b6", "#06b6d4", "#a78bfa"]}
-                spotlightColor="rgba(244, 114, 182, 0.5)">
-                <h2 className="text-xl  font-semibold text-white mb-4">{data.name}</h2>
-                <p className="text-gray-300 mb-2">{data.title}</p>
-                <p className="text-gray-400 text-sm">{data.date}</p>
-                <ul className="list-disc list-inside text-gray-300 mt-4">
-                  {data.jobs.map(job =>
-                    <li>{job}</li>
-                  )}
-                </ul>
-              </SpotlightCard>
-            )}
-          </div>
+        <div className="flex flex-col gap-8">
+          {experience.map((data, index) =>
+            <ExperienceCard key={index} experience={data} isLast={index === experience.length - 1} />
+          )}
         </div>
         <Projects/>
         <div className="pb-50"></div>
