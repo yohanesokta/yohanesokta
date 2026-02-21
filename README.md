@@ -18,7 +18,6 @@ Segfault lebih masuk akal dari kehilangan.
 ```
 ---
 
-> Tetap minimal. Tetap jalan.
-> Walau ada yang tidak bisa di-restart.
-
+- Device : lenovo ideapad slim 3 14itl6
+- OS : ~Microsoft Windows 11~ , Endavaur OS , MAC OS Sequoia
 ---
