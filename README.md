@@ -18,6 +18,10 @@ Segfault lebih masuk akal dari kehilangan.
 ```
 ---
 
+👇 View My School Project 
+
+ [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=fff)](https://gitlab.com/yohanesokta) 
+
 - Device : lenovo ideapad slim 3 14itl6
 - OS : ~Microsoft Windows 11~ , Endavaur OS , MAC OS Sequoia
 ---
