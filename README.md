@@ -20,7 +20,7 @@ Segfault lebih masuk akal dari kehilangan.
 
 👇 View My School Project 
 
- [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=fff)](https://gitlab.com/yohanesokta) 
+ [![OctaForge](https://img.shields.io/badge/OctaForge-FC6D26?logo=gitlab&logoColor=fff)](https://git.oktanio.dev/yohanesokta) 
 
 - Device : lenovo ideapad slim 3 14itl6
 - OS : ~Microsoft Windows 11~ , Endavaur OS , MAC OS Sequoia
