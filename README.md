@@ -1,27 +1,23 @@
 # Core Dumped
 
+![Backend](https://img.shields.io/badge/backend-systems-black)
+![Low Level](https://img.shields.io/badge/low--level-C%2FC%2B%2B-blue)
+![Focus](https://img.shields.io/badge/focus-i%20dont%20know-4c1)
 
-Aku coding backend dan low-level code
+Aku coding backend dan low-level code  
 where behavior is deterministic and failure is traceable.
 
-> Yang pergi nggak kasih log.
-> Yang tersisa cuma error tanpa stack trace.
+> Yang pergi nggak kasih log. Yang tersisa cuma error tanpa stack trace.
 
-Di sistem, kalau ada yang rusak, bisa diperbaiki.
+Di sistem, kalau ada yang rusak, bisa diperbaiki.  
 Di hidup?, tidak selalu begitu.
 
-```c
-Linux lebih jujur dari perasaan.
-tidak pernah berbohong.
-Manusia kadang iya.
-Segfault lebih masuk akal dari kehilangan.
+```bash
+Andai hidup punya `strace`,
+mungkin aku tahu
+di syscall mana semuanya mulai rusak.
 ```
----
 
-👇 View My School Project 
+**School Project Archive**
 
- [![OctaForge](https://img.shields.io/badge/OctaForge-FC6D26?logo=gitlab&logoColor=fff)](https://git.oktanio.dev/yohanesokta) 
-
-- Device : lenovo ideapad slim 3 14itl6
-- OS : ~Microsoft Windows 11~ , Endavaur OS , MAC OS Sequoia
----
+[![Open Project Archive](https://img.shields.io/badge/Open-Project%20Archive-FC6D26?logo=gitlab&logoColor=white)](https://git.oktanio.dev/yohanesokta)
