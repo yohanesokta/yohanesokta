@@ -23,6 +23,16 @@ const projects = [
     github: 'https://github.com/yohanesokta/WebServices-Gajah',
     link: "https://www.gajahweb.tech"
   },
+    {
+    image: '/images/gajahweb.jpg',
+    title: 'OctaForge ( Git )',
+    description: 'Sebuah panel self hosted git platfrom layaknya github pribadi',
+    stack: [
+      { name: 'Nginx', icon: SiNginx },
+    ],
+    github: 'https://github.com/yohanesokta/OctaForge-Self_GIT',
+    link: "https://git.oktanio.dev"
+  },
   {
     image: '/images/promind.jpg',
     title: 'Pro MIND',
