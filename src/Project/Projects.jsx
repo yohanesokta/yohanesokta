@@ -24,7 +24,7 @@ const projects = [
     link: "https://www.gajahweb.tech"
   },
     {
-    image: '/images/gajahweb.jpg',
+    image: '/images/octaforce.png',
     title: 'OctaForge ( Git )',
     description: 'Sebuah panel self hosted git platfrom layaknya github pribadi',
     stack: [
