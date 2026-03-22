@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaReact, FaNodeJs, FaFigma, FaPython, FaWindows, FaLaravel, FaPhp, FaGithub, FaHtml5, FaLinux, FaApple, FaWhatsapp } from 'react-icons/fa';
-import { SiApache, SiCloudflare, SiCloudinary, SiCss3, SiElectron, SiExpress, SiFirebase, SiFlutter, SiHono, SiJavascript, SiMariadb, SiMongodb, SiMysql, SiNextdotjs, SiNginx, SiPostgresql, SiRedis, SiRust, SiTauri, SiTypescript, SiWebpack, SiXcode } from 'react-icons/si';
+import { SiQt ,SiApache, SiCloudflare, SiCloudinary, SiCss3, SiElectron, SiExpress, SiFirebase, SiFlutter, SiHono, SiJavascript, SiMariadb, SiMongodb, SiMysql, SiNextdotjs, SiNginx, SiPostgresql, SiRedis, SiRust, SiTauri, SiTypescript, SiWebpack, SiXcode } from 'react-icons/si';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { DiPhp, DiSwift } from 'react-icons/di';
 
@@ -23,6 +23,16 @@ const projects = [
     github: 'https://github.com/yohanesokta/WebServices-Gajah',
     link: "https://www.gajahweb.tech"
   },
+  {
+    image: '/images/mkos-battery.png',
+    title: 'mcOS BS Inline Battery',
+    description: 'mcOS BS Inline Battery - Plasmoid for KDE 6',
+    stack: [
+      { name: 'QT Engine', icon: SiQt },
+    ],
+    github: 'https://github.com/yohanesokta/mcOS-BS-Inline-Battery',
+    link: "https://store.kde.org/p/2353015"
+  },
     {
     image: '/images/octaforce.png',
     title: 'OctaForge ( Git )',
@@ -31,7 +41,7 @@ const projects = [
       { name: 'Nginx', icon: SiNginx },
     ],
     github: 'https://github.com/yohanesokta/OctaForge-Self_GIT',
-    link: "https://git.oktanio.dev"
+    link: "https://github.com/yohanesokta/OctaForge-Self_GIT"
   },
   {
     image: '/images/promind.jpg',
