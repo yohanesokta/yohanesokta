@@ -12,10 +12,18 @@ where behavior is deterministic and failure is traceable.
 Di sistem, kalau ada yang rusak, bisa diperbaiki.  
 Di hidup?, tidak selalu begitu.
 
+
+<img src="elaina-transparant.png" width="200px" align="left" alt="Elaina" />
+
 ```bash
-Andai hidup punya `strace`,
-mungkin aku tahu
-di syscall mana semuanya mulai rusak.
+╭─ Hardware ───────────────────────────────────╮
+│ Host      : IdeaPad 3 14ITL6 (82H7)          │
+│ OS        : EndeavourOS x86_64               │
+│ CPU       : i3-1115G4 @ 4.10GHz              │
+│ GPU       : Intel UHD G4                     │
+│ DE        : KDE Plasma 6.6.3                 │
+│ Condition : Not Good!                        │
+╰──────────────────────────────────────────────╯
 ```
 
 **School Project Archive**
