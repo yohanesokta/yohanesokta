@@ -1,4 +1,4 @@
-# Core Dumped
+<h1 align='center'> Octa™ </h1>
 
 ![Backend](https://img.shields.io/badge/backend-systems-black)
 ![Low Level](https://img.shields.io/badge/low--level-C%2FC%2B%2B-blue)
@@ -25,7 +25,11 @@ Di hidup?, tidak selalu begitu.
 │ Condition : Not Good!                        │
 ╰──────────────────────────────────────────────╯
 ```
+---
 
-**School Project Archive**
-
-[![Open Project Archive](https://img.shields.io/badge/Open-Project%20Archive-FC6D26?logo=gitlab&logoColor=white)](https://git.oktanio.dev/yohanesokta)
+<p align="center">
+School Project Archive
+</p>
+<p align="center">
+    <a href="https://codeberg.org/yohanesokta"><img src="https://img.shields.io/badge/Open-Project%20Archive-FC6D26?logo=gitlab&logoColor=white"></a>
+</p>
