@@ -23,21 +23,21 @@ Di hidup?, tidak selalu begitu.
 <td width="34%">
 
 <pre>
-╭─ Hardware ───────────────────────────────────╮
-│ Host      : IdeaPad 3 14ITL6 (82H7)          │
-│ OS        : EndeavourOS x86_64               │
-│ CPU       : i3-1115G4 @ 4.10GHz              │
-│ GPU       : Intel UHD G4                     │
-│ DE        : KDE Plasma 6.6.3                 │
-│ Condition : Not Good!                        │
-╰──────────────────────────────────────────────╯
+╭─ Hardware ──────────────────────────╮
+│ Host      : IdeaPad 3 14ITL6 (82H7) │
+│ OS        : EndeavourOS x86_64      │
+│ CPU       : i3-1115G4 @ 4.10GHz     │
+│ GPU       : Intel UHD G4            │
+│ DE        : KDE Plasma 6.6.3        │
+│ Condition : Not Good!               │
+╰─────────────────────────────────────╯
 </pre>
 
 </td>
 
 <td width="33%" align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=yohanesokta&show_icons=true&theme=dark" width="400px" />
+<img src="https://github-readme-stats.vercel.app/api?username=yohanesokta&show_icons=true&theme=dark" width="550px" />
 
 </td>
 </tr>
