@@ -42,7 +42,6 @@ Di hidup?, tidak selalu begitu.
 </td>
 </tr>
 </table>
----
 
 <p align="center">
 School Project Archive
