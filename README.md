@@ -12,10 +12,17 @@ where behavior is deterministic and failure is traceable.
 Di sistem, kalau ada yang rusak, bisa diperbaiki.  
 Di hidup?, tidak selalu begitu.
 
+<table>
+<tr>
+<td width="33%" align="center">
 
-<img src="elaina-transparant.png" width="200px" align="left" alt="Elaina" />
+<img src="elaina-transparant.png" width="200px" />
 
-```bash
+</td>
+
+<td width="34%">
+
+<pre>
 ╭─ Hardware ───────────────────────────────────╮
 │ Host      : IdeaPad 3 14ITL6 (82H7)          │
 │ OS        : EndeavourOS x86_64               │
@@ -24,7 +31,17 @@ Di hidup?, tidak selalu begitu.
 │ DE        : KDE Plasma 6.6.3                 │
 │ Condition : Not Good!                        │
 ╰──────────────────────────────────────────────╯
-```
+</pre>
+
+</td>
+
+<td width="33%" align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=yohanesokta&show_icons=true&theme=dark" width="400px" />
+
+</td>
+</tr>
+</table>
 ---
 
 <p align="center">
