@@ -37,7 +37,7 @@ Di hidup?, tidak selalu begitu.
 
 <td width="33%" align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=yohanesokta&show_icons=true&theme=dark" width="550px" />
+<img src="https://streak-stats.demolab.com/?user=yohanesokta&currStreakNum=2FD3EB&fire=pink&sideLabels=F00&date_format=[Y.]n.j" width="550px" />
 
 </td>
 </tr>
