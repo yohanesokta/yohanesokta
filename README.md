@@ -14,7 +14,7 @@ Di hidup?, tidak selalu begitu.
 
 <table>
 <tr>
-<td width="33%" align="center">
+<td width="20%" align="center">
 
 <img src="elaina-transparant.png" width="200px" />
 
@@ -36,8 +36,7 @@ Di hidup?, tidak selalu begitu.
 </td>
 
 <td width="33%" align="center">
-
-<img src="https://streak-stats.demolab.com/?user=yohanesokta&currStreakNum=2FD3EB&fire=pink&sideLabels=F00&date_format=[Y.]n.j" width="550px" />
+<img src="https://github-readme-stats-fast.vercel.app/api?username=yohanesokta&show_icons=true&theme=radical" width="550px" />
 
 </td>
 </tr>
