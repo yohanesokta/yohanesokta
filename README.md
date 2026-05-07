@@ -7,7 +7,9 @@
 Aku coding backend dan low-level code  
 where behavior is deterministic and failure is traceable.
 
-> Yang pergi nggak kasih log. Yang tersisa cuma error tanpa stack trace.
+> Fikiran : season terbaru serial itu sudah realease belum?
+
+> Fakta   : serial itu di batalkan demi kesehatan mental produser utama ( you )
 
 Di sistem, kalau ada yang rusak, bisa diperbaiki.  
 Di hidup?, tidak selalu begitu.
