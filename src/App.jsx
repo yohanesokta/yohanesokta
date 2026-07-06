@@ -7,7 +7,7 @@ import RunningText from "./Components/Running/Running.jsx";
 import DelayedCursor from "./Animations/DelayedCursor/DelayedCursor.jsx";
 import SpotlightCard from "./Components/SpotlightCard/SpotlightCard.jsx";
 import Projects from "./Project/Projects.jsx";
-import CiCdGraphic from "./Components/CiCdGraphic/CiCdGraphic.jsx"; // Import CiCdGraphic
+import DsxShowcase from "./Project/DsxShowcase.jsx"; // Import DsxShowcase
 import Contact from "./Project/Contact.jsx";
 import ExperienceCard from "./Project/ExperienceCard.jsx";
 
@@ -236,7 +236,7 @@ export function App() {
             ))}
           </div>
           <Projects />
-          <CiCdGraphic /> {/* Render the CiCdGraphic component */}
+          <DsxShowcase /> {/* Render the DsxShowcase component */}
           <div className="pb-50"></div>
           <Contact />
         </div>

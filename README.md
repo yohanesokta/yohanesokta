@@ -4,15 +4,11 @@
 ![Low Level](https://img.shields.io/badge/low--level-C%2FC%2B%2B-blue)
 ![Focus](https://img.shields.io/badge/focus-i%20dont%20know-4c1)
 
-Aku coding backend dan low-level code  
+Aku bersembunyi di balik backend dan low-level code  
 where behavior is deterministic and failure is traceable.
 
-> Fikiran : season terbaru serial itu sudah realease belum?
+> "Terkadang, lebih baik kita tidak pernah saling mengetahui dan menjadi asing selamanya, daripada bersisian sebagai teman namun perasaan terdalam hanya tersirat dalam diam. Biarlah ketidakpastian itu memotivasi kita untuk terus melangkah dan tumbuh di jalan masing-masing."
 
-> Fakta   : serial itu di batalkan demi kesehatan mental produser utama ( you )
-
-Di sistem, kalau ada yang rusak, bisa diperbaiki.  
-Di hidup?, tidak selalu begitu.
 
 <table>
 <tr>
@@ -27,10 +23,10 @@ Di hidup?, tidak selalu begitu.
 <pre>
 ╭─ Hardware ──────────────────────────╮
 │ Host      : IdeaPad 3 14ITL6 (82H7) │
-│ OS        : EndeavourOS x86_64      │
+│ OS        : Ubuntu 26 x86_64        │
 │ CPU       : i3-1115G4 @ 4.10GHz     │
 │ GPU       : Intel UHD G4            │
-│ DE        : KDE Plasma 6.6.3        │
+│ DE        : Niri (Wayland)          │
 │ Condition : Not Good!               │
 ╰─────────────────────────────────────╯
 </pre>
