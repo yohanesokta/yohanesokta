@@ -11,7 +11,7 @@ import CiCdGraphic from "./Components/CiCdGraphic/CiCdGraphic.jsx"; // Import Ci
 import Contact from "./Project/Contact.jsx";
 import ExperienceCard from "./Project/ExperienceCard.jsx";
 
-import experience from "./static/experience.json";
+import { experiences } from "./static/experiences.js";
 
 export function App() {
   const navigationContainer = useRef(null);
@@ -217,22 +217,19 @@ export function App() {
         <div className="px-3 md:px-10 lg:px-20 relative" id="experience" ref={experienceRef}>
           <h1 className="font-bold text-4xl text-center mx-0 md:mx-10 text-white py-15 pb-20">Experience</h1>
           {/* start loop */}
-          <div ref={timelineContainerRef} className="relative wrap overflow-hidden p-10 h-full max-w-4xl mx-auto">
-            <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style={{ left: '50%' }}></div>
+          <div ref={timelineContainerRef} className="relative wrap overflow-hidden py-10 px-4 md:px-10 h-full max-w-4xl mx-auto">
+            <div className="absolute border-r border-opacity-20 border-gray-700 h-full" style={{ left: '24px' }}></div>
             {/* Progress Line (light orange) */}
-            <div ref={progressLineRef} className="absolute w-0.5 bg-orange-400" style={{ left: '50%', top: 0, height: '0%' }}></div>
-            {experience.map((data, index) => (
-              <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}>
-                <div className="order-1 w-5/12"></div>
-                <div className="z-10 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
-                  <h1 className="mx-auto font-semibold text-lg text-white">
-                    <svg className="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.628A2.25 2.25 0 0118.75 16H5.25A2.25 2.25 0 013 13.628V10.372A2.25 2.25 0 015.25 8h13.5A2.25 2.25 0 0121 10.372v3.256z"></path>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.75 8V6a3 3 0 00-3-3h-3a3 3 0 00-3 3v2m5.25 8v2a3 3 0 01-3 3h-3a3 3 0 01-3-3v-2"></path>
-                    </svg>
-                  </h1>
+            <div ref={progressLineRef} className="absolute w-0.5 bg-orange-400" style={{ left: '24px', top: 0, height: '0%' }}></div>
+            {experiences.map((data, index) => (
+              <div key={index} className="mb-12 flex items-start w-full relative pl-12 md:pl-16">
+                <div className="absolute z-10 flex items-center justify-center bg-gray-800 shadow-xl w-10 h-10 rounded-full border border-green-300/30" style={{ left: '4px' }}>
+                  <svg className="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.628A2.25 2.25 0 0118.75 16H5.25A2.25 2.25 0 013 13.628V10.372A2.25 2.25 0 015.25 8h13.5A2.25 2.25 0 0121 10.372v3.256z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.75 8V6a3 3 0 00-3-3h-3a3 3 0 00-3 3v2m5.25 8v2a3 3 0 01-3 3h-3a3 3 0 01-3-3v-2"></path>
+                  </svg>
                 </div>
-                <div className="order-1 w-5/12 px-1 py-4">
+                <div className="w-full">
                   <ExperienceCard experience={data} />
                 </div>
               </div>
