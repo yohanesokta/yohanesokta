@@ -4,7 +4,7 @@
 ![Low Level](https://img.shields.io/badge/low--level-C%2FC%2B%2B-blue)
 ![Focus](https://img.shields.io/badge/focus-i%20dont%20know-4c1)
 
-Aku bersembunyi di balik backend dan low-level code  
+Aku memilih backend dan low-level code  
 where behavior is deterministic and failure is traceable.
 
 > "Terkadang, lebih baik kita tidak pernah saling mengetahui dan menjadi asing selamanya, daripada bersisian sebagai teman namun perasaan terdalam hanya tersirat dalam diam. Biarlah ketidakpastian itu memotivasi kita untuk terus melangkah dan tumbuh di jalan masing-masing."
@@ -22,12 +22,12 @@ where behavior is deterministic and failure is traceable.
 
 <pre>
 ╭─ Hardware ──────────────────────────╮
-│ Host      : IdeaPad 3 14ITL6 (82H7) │
-│ OS        : Ubuntu 26 x86_64        │
-│ CPU       : i3-1115G4 @ 4.10GHz     │
-│ GPU       : Intel UHD G4            │
-│ DE        : Niri (Wayland)          │
-│ Condition : Not Good!               │
+│ Host      : IdeaPad 3 14ITL6 (82H7)    │
+│ OS        : Ubuntu 26 x86_64           │
+│ CPU       : i3-1115G4 @ 4.10GHz        │
+│ GPU       : Intel UHD G4               │
+│ DE        : Niri (Wayland)             │
+│ Condition : Not Good!                  │
 ╰─────────────────────────────────────╯
 </pre>
 
