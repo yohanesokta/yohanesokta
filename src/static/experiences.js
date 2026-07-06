@@ -9,7 +9,7 @@ export const experiences = [
   {
     id: "visioncane",
     name: "VisionCane (PKM-KC 2026)",
-    title: "Ketua Tim & IoT Developer",
+    title: "Tim IoT Developer",
     date: "Februari 2026 - Present",
     story: "VisionCane lahir dari kepedulian terhadap teman-teman tunanetra. Kami mengembangkan tongkat pintar berbasis IoT dan computer vision untuk membantu mereka menavigasi lingkungan sekitar dengan lebih aman. Proyek ini berhasil lolos pendanaan bergengsi PKM-KC (Program Kreativitas Mahasiswa - Karsa Cipta) tahun 2026 oleh Kemendikbudristek.",
     jobs: [
@@ -44,7 +44,7 @@ export const experiences = [
     id: "wargalab_oprec_2026",
     name: "Panitia Open Recruitment Wargalab 2026",
     title: "Developer Aplikasi Tester / Web Engineer",
-    date: "Januari 2026 - Februari 2026",
+    date: "Juni 2026 - Juli 2026",
     story: "Dipercaya menjadi panitia divisi teknis untuk menyeleksi asisten laboratorium baru. Saya mengembangkan 'Nopilot', sebuah versi kustom dari editor kode VS Code dengan fitur kecerdasan buatan (AI) yang dinonaktifkan sepenuhnya. Aplikasi ini digunakan sebagai alat ujian resmi untuk memastikan seluruh kandidat diuji murni berdasarkan pemahaman logika pemrograman individu tanpa bantuan asisten AI.",
     jobs: [
       "Mengembangkan dan melakukan custom build editor kode 'Nopilot' berbasis platform VS Code open-source.",

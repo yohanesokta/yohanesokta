@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaReact, FaNodeJs, FaFigma, FaPython, FaWindows, FaLaravel, FaPhp, FaGithub, FaHtml5, FaLinux, FaApple, FaWhatsapp } from 'react-icons/fa';
-import { SiQt ,SiApache, SiCloudflare, SiCloudinary, SiCss3, SiElectron, SiExpress, SiFirebase, SiFlutter, SiHono, SiJavascript, SiMariadb, SiMongodb, SiMysql, SiNextdotjs, SiNginx, SiPostgresql, SiRedis, SiRust, SiTauri, SiTypescript, SiWebpack, SiXcode, SiThreedotjs, SiDocker, SiCplusplus, SiKde } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaPython, FaWindows, FaLaravel, FaPhp, FaGithub, FaHtml5, FaLinux, FaApple, FaWhatsapp } from 'react-icons/fa';
+import { SiQt, SiApache, SiCloudflare, SiCloudinary, SiCss3, SiElectron, SiExpress, SiFirebase, SiFlutter, SiHono, SiJavascript, SiMariadb, SiMongodb, SiMysql, SiNextdotjs, SiNginx, SiPostgresql, SiRedis, SiRust, SiTauri, SiTypescript, SiWebpack, SiXcode, SiThreedotjs, SiDocker, SiCplusplus, SiKde, SiOpengl } from 'react-icons/si';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { DiPhp, DiSwift } from 'react-icons/di';
 import SpotlightCard from '../Components/SpotlightCard/SpotlightCard.jsx';
@@ -25,12 +25,9 @@ const projects = [
   {
     image: '/images/glfps.png',
     title: 'GL-FPS',
-    description: 'Game penembak sudut pandang pertama (First-Person Shooter) 3D interaktif yang berjalan sepenuhnya di peramban web. Menggunakan WebGL dan Three.js untuk rendering grafis 3D realtime yang lancar, lengkap dengan sistem deteksi tabrakan (collision detection) dan navigasi peta yang dinamis.',
+    description: 'Game penembak sudut pandang pertama (First-Person Shooter) 3D interaktif yang berjalan sepenuhnya di peramban web. Menggunakan OPENGL GLUT untuk rendering grafis 3D realtime yang lancar, lengkap dengan sistem deteksi tabrakan (collision detection) dan navigasi peta yang dinamis.',
     stack: [
-      { name: 'Three.js', icon: SiThreedotjs },
-      { name: 'WebGL', icon: SiThreedotjs },
-      { name: 'HTML5', icon: FaHtml5 },
-      { name: 'Javascript', icon: SiJavascript }
+      { name: 'OpenGL', icon: SiOpengl }
     ],
     github: 'https://github.com/yohanesokta/GL-FPS',
     link: 'https://yohanesokta.github.io/GL-FPS/'
@@ -69,7 +66,7 @@ const projects = [
     github: 'https://github.com/yohanesokta/mcOS-BS-Inline-Battery',
     link: "https://store.kde.org/p/2353015"
   },
-    {
+  {
     image: '/images/octaforce.png',
     title: 'OctaForge ( Git )',
     description: 'Sebuah panel self hosted git platfrom layaknya github pribadi',
@@ -285,8 +282,8 @@ const Projects = () => {
                 transition={{ duration: 0.6, delay: (index % 2) * 0.1, ease: "easeOut" }}
                 className="h-full"
               >
-                <SpotlightCard 
-                  className="h-full flex flex-col p-6 bg-neutral-900/60 border border-neutral-800/80 hover:border-green-300/20 transition-all duration-300" 
+                <SpotlightCard
+                  className="h-full flex flex-col p-6 bg-neutral-900/60 border border-neutral-800/80 hover:border-green-300/20 transition-all duration-300"
                   spotlightColor="rgba(52, 211, 153, 0.12)"
                 >
                   <div className="flex flex-col h-full justify-between">
@@ -294,19 +291,19 @@ const Projects = () => {
                       {/* Project Image */}
                       {project.image && (
                         <div className="w-full h-48 sm:h-52 overflow-hidden rounded-xl mb-5 relative group/img">
-                          <img 
-                            src={project.image} 
-                            alt={project.title} 
-                            className="object-cover w-full h-full transition-transform duration-500 group-hover/img:scale-105" 
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="object-cover w-full h-full transition-transform duration-500 group-hover/img:scale-105"
                           />
                         </div>
                       )}
-                      
+
                       {/* Project Title */}
                       <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-200">
                         {project.title}
                       </h3>
-                      
+
                       {/* Project Description */}
                       <p className="text-gray-400 text-sm leading-relaxed mb-6">
                         {project.description}
@@ -317,8 +314,8 @@ const Projects = () => {
                       {/* Tech Stack */}
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {project.stack.map((tech, i) => (
-                          <div 
-                            key={i} 
+                          <div
+                            key={i}
                             className="flex items-center gap-1.5 px-3 py-1 bg-neutral-800/50 border border-white/5 rounded-full text-xs font-medium text-gray-300 shadow-sm"
                           >
                             {tech.icon && <tech.icon className="text-xs text-green-300" />}
