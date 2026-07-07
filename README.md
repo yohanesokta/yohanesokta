@@ -7,9 +7,6 @@
 Aku memilih backend dan low-level code  
 where behavior is deterministic and failure is traceable.
 
-> "Terkadang, lebih baik kita tidak pernah saling mengetahui dan menjadi asing selamanya, daripada bersisian sebagai teman namun perasaan terdalam hanya tersirat dalam diam. Biarlah ketidakpastian itu memotivasi kita untuk terus melangkah dan tumbuh di jalan masing-masing."
-
-
 <table>
 <tr>
 <td width="20%" align="center">
