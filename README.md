@@ -1,5 +1,7 @@
 <h1 align='center'> Octa™ </h1>
 
+![terminal](./terminal.webp)
+
 ![Backend](https://img.shields.io/badge/backend-systems-black)
 ![Low Level](https://img.shields.io/badge/low--level-C%2FC%2B%2B-blue)
 ![Focus](https://img.shields.io/badge/focus-i%20dont%20know-4c1)
@@ -7,35 +9,7 @@
 Aku memilih backend dan low-level code  
 where behavior is deterministic and failure is traceable.
 
-<table>
-<tr>
-<td width="20%" align="center">
-
-<img src="elaina-transparant.png" width="200px" />
-
-</td>
-
-<td width="34%">
-
-<pre>
-╭─ Hardware ──────────────────────────╮
-│ Host      : IdeaPad 3 14ITL6 (82H7)    │
-│ OS        : Ubuntu 26 x86_64           │
-│ CPU       : i3-1115G4 @ 4.10GHz        │
-│ GPU       : Intel UHD G4               │
-│ DE        : Niri (Wayland)             │
-│ Condition : Not Good!                  │
-╰─────────────────────────────────────╯
-</pre>
-
-</td>
-
-<td width="33%" align="center">
-<img src="https://github-readme-stats-fast.vercel.app/api?username=yohanesokta&show_icons=true&theme=radical" width="550px" />
-
-</td>
-</tr>
-</table>
+---
 
 <p align="center">
 School Project Archive
