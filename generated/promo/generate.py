@@ -712,7 +712,7 @@ JOKE_LINES = [
 # the SIRB.AI bullet on multi-agent planning, the TII one on behaviour
 # orchestration, and the Unchained/Kymatics work on agentic orchestration.
 SPEC = [
-    ("role", "super software developer"),
+    ("role", "software developer"),
     ("based", "linux & networking"),
     ("building", "high performance systems · kernel modules"),
     ("also", "no ai · pure networking"),
@@ -723,7 +723,7 @@ TRAJECTORY = [
     (2020.7, "sysadmin", "linux"),
     (2021.5, "neteng", "routing"),
     (2022.6, "architect", "systems"),
-    (2024.3, "super dev", "networking"),
+    (2024.3, "developer", "networking"),
     (2026.3, "expert", "linux"),
 ]
 TRAJ_T0, TRAJ_T1 = 2018.6, 2026.9
@@ -978,7 +978,7 @@ def scene_sign(d, f):
 
     if t >= 5:
         b = ease_out(seg(t, 5, 4))
-        ctext(d, cx, 256, "Yohanes Oktanio — super software developer, linux & networking",
+        ctext(d, cx, 256, "Yohanes Oktanio — software developer, linux & networking",
               F_MONO_S, fade(MUTED, b))
 
     if t >= 7:
