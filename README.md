@@ -16,9 +16,9 @@
 <br>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api?username=yohanesokta&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" width="400px" alt="Octa's GitHub Stats" align="middle" />
+  <img src="https://komarev.com/ghpvc/?username=yohanesokta&label=Profile%20Views&color=6FA8DC&style=flat" width="120px" height="25px" alt="Octa's GitHub Stats" align="middle" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://codeberg.org/yohanesokta">
+  <a href="https://gitcrft.netlify.app/yohanesokta?tab=repositories">
     <img src="https://img.shields.io/badge/School_Project-Archive-FC6D26?logo=gitlab&logoColor=white&style=for-the-badge" alt="Codeberg Archive" align="middle" />
   </a>
 </p>
